@@ -416,10 +416,10 @@ export default function App() {
                       >
                         <div className="grid grid-cols-4 gap-4">
                           {[
-                            { title: '集团健康经营诊断', icon: Radar },
-                            { title: '地区健康经营诊断', icon: MessageSquare },
-                            { title: '经营单元健康经营诊断', icon: BarChart3 },
-                            { title: '职能条线健康经营诊断', icon: PieChartIcon },
+                            { title: '集团健康经营诊断' },
+                            { title: '地区健康经营诊断' },
+                            { title: '经营单元健康经营诊断' },
+                            { title: '职能条线健康经营诊断' },
                           ].map((opt, idx) => {
                             const isDisabled = opt.title !== '地区健康经营诊断';
                             return (
@@ -431,23 +431,16 @@ export default function App() {
                                   }
                                 }}
                                 className={cn(
-                                  "flex flex-col items-center justify-center p-4 bg-white border rounded-2xl transition-all group",
+                                  "flex flex-col items-center justify-center p-6 bg-white border rounded-2xl transition-all group min-h-[100px]",
                                   selectedScene === opt.title 
-                                    ? "border-blue-500 shadow-md ring-2 ring-blue-500/10" 
+                                    ? "border-blue-500 shadow-md ring-2 ring-blue-500/10 bg-blue-50/30" 
                                     : "border-gray-100",
-                                  !isDisabled && "hover:border-blue-400 hover:shadow-md",
-                                  isDisabled && "cursor-not-allowed"
+                                  !isDisabled && "hover:border-blue-400 hover:shadow-md hover:bg-blue-50/10",
+                                  isDisabled && "cursor-not-allowed opacity-60"
                                 )}
                               >
-                                <div className={cn(
-                                  "w-10 h-10 rounded-xl flex items-center justify-center mb-3 transition-colors",
-                                  selectedScene === opt.title ? "bg-blue-600 text-white" : "bg-blue-50 text-blue-600",
-                                  !isDisabled && "group-hover:bg-blue-100"
-                                )}>
-                                  <opt.icon size={20} className={selectedScene === opt.title ? "text-white" : "text-blue-600"} />
-                                </div>
                                 <span className={cn(
-                                  "text-[11px] font-bold text-center leading-tight transition-colors",
+                                  "text-sm font-bold text-center leading-tight transition-colors",
                                   selectedScene === opt.title ? "text-blue-600" : "text-gray-800"
                                 )}>{opt.title}</span>
                               </button>
@@ -471,11 +464,9 @@ export default function App() {
                             handleSend();
                           }
                         }}
-                        placeholder={selectedScene ? "作为资深经营分析专家，帮我看下华南分拨区上个月的经营健康度表现怎么样，有哪些弱项" : "请先点击“智能问数”并选择一个主题场景"}
-                        disabled={!selectedScene}
+                        placeholder="你是一名经营分析专家，帮我综合分析深莞区目前的经营健康度情况"
                         className={cn(
-                          "w-full bg-transparent border-none focus:ring-0 text-sm p-3 min-h-[100px] resize-none scrollbar-hide outline-none transition-opacity",
-                          !selectedScene && "opacity-50 cursor-not-allowed"
+                          "w-full bg-transparent border-none focus:ring-0 text-sm p-3 min-h-[100px] resize-none scrollbar-hide outline-none transition-opacity"
                         )}
                       />
                       <div className="flex items-center justify-between px-2 pb-2">
@@ -504,10 +495,10 @@ export default function App() {
                                 handleSend();
                               }
                             }}
-                            disabled={!input.trim() || !selectedScene}
+                            disabled={!input.trim()}
                             className={cn(
                               "p-2 rounded-xl transition-all",
-                              (input.trim() && selectedScene) ? "bg-blue-600 text-white shadow-lg shadow-blue-200" : "bg-gray-100 text-gray-300"
+                              input.trim() ? "bg-blue-600 text-white shadow-lg shadow-blue-200" : "bg-gray-100 text-gray-300"
                             )}
                           >
                             <Send size={18} />
