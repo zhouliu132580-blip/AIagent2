@@ -401,7 +401,7 @@ export default function App() {
                       className="flex items-center gap-2 px-4 py-2 bg-white text-gray-600 border border-gray-100 rounded-xl text-xs font-medium hover:bg-gray-100 transition-all shadow-sm shrink-0"
                     >
                       <TrendingUp size={14} />
-                      深度洞察
+                      数据洞察
                     </button>
                   </div>
 
@@ -464,7 +464,7 @@ export default function App() {
                             handleSend();
                           }
                         }}
-                        placeholder="你是一名经营分析专家，帮我综合分析深莞区目前的经营健康度情况"
+                        placeholder="作为经营分析专家，请查询深莞区当前的经营健康度数据，包括总体健康度评分和五维度评灯"
                         className={cn(
                           "w-full bg-transparent border-none focus:ring-0 text-sm p-3 min-h-[100px] resize-none scrollbar-hide outline-none transition-opacity"
                         )}
@@ -683,7 +683,7 @@ export default function App() {
                   className="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 border border-gray-100 rounded-xl text-xs font-medium hover:bg-gray-100 transition-all shrink-0"
                 >
                   <TrendingUp size={14} />
-                  深度洞察
+                  数据洞察
                 </button>
               </div>
 
